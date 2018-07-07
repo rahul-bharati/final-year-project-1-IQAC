@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    background-image: linear-gradient(to right bottom, $color-gradient-1, $color-gradient-2, $color-gradient-3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 2rem;
+}

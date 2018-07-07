@@ -1,0 +1,105 @@
+.form
+{
+
+    &__group:not(:last-child)
+    {
+        margin-bottom: 2rem;
+    }
+
+    &__input
+    {
+        font-family: inherit;
+        font-size: 1.2rem;
+        color: inherit;
+        padding: 1rem 2rem;
+        border-radius: 3px;
+        background-color: rgba($color-white,.5);
+        border: none;
+        display: block;
+        border-bottom: 3px solid rgba(#000,.1);
+        width: 100%;
+        transition: all .2s;
+        outline: none;
+
+        &:focus
+        {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(#000,.1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid
+        {
+            border: none;
+            outline: none;
+            border-bottom: 3px solid $color-danger;
+        }
+    }
+
+    &__label
+    {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .2s;
+    }
+
+    &__input:placeholder-shown + &__label
+    {
+        transform: translateY(-4rem);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__radio-group
+    {
+        width: 49%;
+        display: inline-flex;
+        align-content: center;
+    }
+
+    &__radio-label
+    {
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    &__radio-input
+    {
+        display: none;
+    }
+
+    &__radio-button
+    {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: inline-flex;
+        border: 2px solid $color-primary;
+        @include abs-center;
+        margin-left: -30%;
+
+        &::after
+        {
+            content: "";
+            height: 1.6rem;
+            width: 1.6rem;
+            display: block;
+            background-color: $color-primary;
+            border-radius: 50%;
+            @include abs-center;
+            opacity: 0;
+            backface-visibility: hidden;
+            transition: opacity .2s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label > &__radio-button::after
+    {
+        opacity: 1;
+    }
+}
