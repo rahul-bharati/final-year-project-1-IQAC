@@ -102,4 +102,34 @@
     {
         opacity: 1;
     }
+
+    &__select
+    {
+        font-family: inherit;
+        font-size: 1.2rem;
+        color: inherit;
+        padding: 1rem 2rem;
+        border-radius: 3px;
+        background-color: rgba($color-white,.5);
+        border: none;
+        display: block;
+        border-bottom: 3px solid rgba(#000,.1);
+        width: 100%;
+        transition: all .2s;
+        outline: none;
+
+        &:focus
+        {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(#000,.1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid
+        {
+            border: none;
+            outline: none;
+            border-bottom: 3px solid $color-danger;
+        }
+    }
 }
