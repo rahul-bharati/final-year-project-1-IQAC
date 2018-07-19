@@ -8,8 +8,32 @@ body
 {
     font-size: 1.6rem;
     font-family: 'Open Sans', sans-serif;
+    color: $color-primary;
 }
 
-.heading__primary
+.heading
 {
+    &__primary
+    {
+        font-weight: 400;
+
+        &--sub
+        {
+            font-size: 2rem;
+        }
+
+        &--main
+        {
+            font-size: 3rem;
+        }
+    }
+
+    &__secondary
+    {
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-align: center;
+        color: #2c3e50;
+    }
+
 }

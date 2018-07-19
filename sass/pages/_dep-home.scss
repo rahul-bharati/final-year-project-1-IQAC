@@ -1,0 +1,47 @@
+.container
+{
+    min-height: 60rem;
+    background-color: #f1f2f6;
+    width: 95%;
+    box-shadow: 0 2rem 4rem rgba(0,0,0,.5);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+
+    .main
+    {
+        display: flex;
+        flex-grow: 1;
+
+        .nav-container
+        {
+            max-width: 20%;
+            padding: 2rem;
+            border-right: 1px solid $color-primary;
+            flex-grow: 1;
+
+            .nav-wrapper > :not(:last-child)
+            {
+                margin-bottom: 1rem;
+            }
+            .nav-wrapper
+            {
+                list-style: none;
+            }
+            .nav-item
+            {
+                text-transform: uppercase;
+                border-bottom: 1px solid #bdc3c7;
+                display: block;
+                
+                a.nav-link
+                {
+                    padding: 1rem;
+                    text-decoration: none;
+                    display: block;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}
