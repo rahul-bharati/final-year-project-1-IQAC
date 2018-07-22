@@ -202,10 +202,9 @@ body {
     display: flex;
     flex-grow: 1; }
     .container .main .nav-container {
-      max-width: 20%;
+      flex: 0 0 25%;
       padding: 2rem;
-      border-right: 1px solid #7f8c8d;
-      flex-grow: 1; }
+      border-right: 1px solid #7f8c8d; }
       .container .main .nav-container .nav-wrapper > :not(:last-child) {
         margin-bottom: 1rem; }
       .container .main .nav-container .nav-wrapper {
@@ -219,6 +218,11 @@ body {
           text-decoration: none;
           display: block;
           color: #7f8c8d; }
+  .container .form-container {
+    flex: 0 0 75%;
+    padding: 2rem; }
+  .container .btn-group {
+    display: flex; }
 
 .login {
   height: 100vh;
