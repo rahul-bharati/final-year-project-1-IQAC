@@ -81,14 +81,52 @@ body {
     border: none;
     outline: none;
     border-bottom: 3px solid #c0392b; }
+  .form__input--main {
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: inherit;
+    padding: .5rem 0;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all .2s; }
+    .form__input--main:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #7f8c8d; }
+    .form__input--main:focus:invalid {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #c0392b; }
+    .form__input--main:invalid {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #c0392b; }
 
 .form__label {
   font-size: 1.2rem;
   font-weight: 400;
   margin-left: 2rem;
-  margin-top: .7rem;
   display: block;
   transition: all .2s; }
+  .form__label--up {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 2rem;
+    display: block; }
+    .form__label--up:hover {
+      cursor: pointer; }
+  .form__label--active {
+    color: #2980b9;
+    font-size: 1.3rem; }
+  .form__label:hover {
+    cursor: pointer; }
+
+.form label:hover {
+  cursor: pointer; }
 
 .form__input:placeholder-shown + .form__label {
   transform: translateY(-4rem);
@@ -160,6 +198,25 @@ body {
     outline: none;
     border-bottom: 3px solid #c0392b; }
 
+.input__group {
+  display: flex;
+  flex-grow: 0; }
+  .input__group .upload-img-group {
+    display: flex;
+    flex: 0 0 25%; }
+    .input__group .upload-img-group img {
+      width: 98%; }
+
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance: textfield; }
+
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -226,7 +283,6 @@ body {
 
 .login {
   height: 100vh;
-  background-image: inherit;
   display: flex;
   position: relative; }
   .login__box {

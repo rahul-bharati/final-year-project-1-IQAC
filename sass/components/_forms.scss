@@ -34,6 +34,42 @@
             outline: none;
             border-bottom: 3px solid $color-danger;
         }
+
+        &--main
+        {
+            font-family: inherit;
+            font-size: 1.2rem;
+            color: inherit;
+            padding: .5rem 0;
+            display: block;
+            width: 100%;
+            outline: none;
+            border:none;
+            background-color: inherit;
+            border-bottom: 1px solid rgba(#000,.1);
+            transition: all .2s;
+
+            &:focus
+            {
+                outline: none;
+                box-shadow: 0 1rem 2rem rgba(#000,.1);
+                border-bottom: 1px solid $color-primary;
+            }
+
+            &:focus:invalid
+            {
+                border: none;
+                outline: none;
+                border-bottom: 1px solid $color-danger;
+            }
+
+            &:invalid
+            {
+                border: none;
+                outline: none;
+                border-bottom: 1px solid $color-danger;
+            }
+        }
     }
 
     &__label
@@ -41,9 +77,37 @@
         font-size: 1.2rem;
         font-weight: 400;
         margin-left: 2rem;
-        margin-top: .7rem;
         display: block;
         transition: all .2s;
+
+        &--up
+        {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 2rem;
+            display: block;
+
+            &:hover
+            {
+                cursor: pointer;
+            }
+        }
+
+        &--active
+        {
+            color: $color-primary-blue;
+            font-size: 1.3rem;
+        }
+
+        &:hover
+        {
+            cursor: pointer;
+        }
+    }
+    
+    label:hover
+    {
+        cursor: pointer;
     }
 
     &__input:placeholder-shown + &__label
@@ -132,4 +196,32 @@
             border-bottom: 3px solid $color-danger;
         }
     }
+}
+
+.input__group
+{
+    display: flex;
+    flex-grow: 0;
+
+    .upload-img-group
+    {
+        display: flex;
+        flex: 0 0 25%;
+
+        img
+        {
+            width: 98%;
+        }
+    }
+}
+
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
