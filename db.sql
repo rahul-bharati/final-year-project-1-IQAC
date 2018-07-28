@@ -17,9 +17,20 @@ id int primary key auto_increment,
 
 --create table to record report log
 create table if not exist `iqac`.`report`(id int primary key auto_increment,
-ref_id int, date datetime default current_timestamp, status boolean);
+ref_id int, dateOfCreation datetime default current_timestamp, status boolean);
 
-create table if not exist `iqac`.
+create table if not exist `iqac`.`workshop`(
+    id int primary key auto_increment,
+    title varchar(40),
+    subtitle varchar(40),
+    description varchar(1000),
+    dateOfConduct datetime,
+    report varchar(1000),
+    img1 varchar(1000),
+    img2 varchar(1000),
+    img3 varchar(1000),
+    img4 varchar(1000)
+);
 
 -- Populating the table
 insert into `iqac`.`facultyDept` values
