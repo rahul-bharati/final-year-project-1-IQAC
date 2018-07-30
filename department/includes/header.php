@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/font.min.css">
     <title>IQAC</title>
 </head>
 <body>
@@ -17,6 +18,15 @@
                 <span class="heading__primary--main">IQAC</span>
                 <span class="heading__primary--sub">dashboard</span>
             </h1>
+            <div class="logout">
+                <span class="logout__span">
+                    <i class="icon fa fa-user"></i>
+                </span>
+                <span class="logout__detail">
+                    <span class="user-name"><?php echo $_SESSION["dept"]; ?></span>
+                    <span class="logout__link"><a href="logout.php" class="link">logout</a></span>
+                </span>
+            </div>
         </header>
         <main class="main">
             <div class="nav-container">

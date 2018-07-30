@@ -2,6 +2,11 @@
     include "../config/config.php";
     session_start();
 
+    // if(isset($_SESSION["dept"]))
+    // {
+    //     header("location: index.php");
+    // }
+
     $user = "";
     $error="";
     if($_SERVER["REQUEST_METHOD"] == "POST")
@@ -21,6 +26,7 @@
         else
         {
             $error = "invalid password";
+            header("location:login.php");
         }
     }
 

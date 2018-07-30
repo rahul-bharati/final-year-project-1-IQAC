@@ -5,7 +5,6 @@
 
     $user = "";
     $error="";
-    echo ($_SERVER["REQUEST_METHOD"]);
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $user = $_POST["Department"];
@@ -14,7 +13,7 @@
         
         $sql = "select Department_name,Password from iqac.adminDept where Department_name='$user' and Password='$password'";
         $result = $con->query($sql) or die($con->error);
-        //$row = $result->fetch_assoc();
+        $row = $result->fetch_assoc();
 
         if($result->num_rows == 1)
         {
@@ -25,6 +24,7 @@
         else
         {
             $error = "invalid password";
+            header("location:login.php");
         }
     }
 
@@ -73,7 +73,7 @@
                 <div class="form__group margin-top-small">
                     <button class="btn">Log in &rarr;</button>
                 </div>
-                <span><?php $error;?></span>
+                <span class="error"><?php echo $error;?></span>
             </form>
         </div>
     </div>

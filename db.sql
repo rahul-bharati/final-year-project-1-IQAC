@@ -19,6 +19,7 @@ id int primary key auto_increment,
 create table if not exist `iqac`.`report`(id int primary key auto_increment,
 ref_id int, dateOfCreation datetime default current_timestamp, status boolean);
 
+--create workshop table
 create table if not exist `iqac`.`workshop`(
     id int primary key auto_increment,
     title varchar(40),
@@ -31,6 +32,75 @@ create table if not exist `iqac`.`workshop`(
     img3 varchar(1000),
     img4 varchar(1000)
 );
+
+--create seminar table
+create table if not exist `iqac`.`seminars`(
+    id int primary key auto_increment,
+    title varchar(40),
+    subtitle varchar(40),
+    description varchar(40),
+    dateOfConduct datatime,
+    lecturerName varchar(40),
+    topic varchar(100),
+    contact number(12),
+    report varchar(1000),
+    img1 varchar(1000),
+    img2 varchar(1000),
+    img3 varchar(1000),
+    img4 varchar(1000)
+)
+
+
+--create Guest Lectures table
+create table if not exist `iqac`.`guest_lectures`(
+    id int primary key auto_increment,
+    title varchar(40),
+    subtitle varchar(40),
+    description varchar(40),
+    dateOfConduct datatime,
+    lecturerName varchar(40),
+    topic varchar(100),
+    contact number(12),
+    report varchar(1000),
+    img1 varchar(1000),
+    img2 varchar(1000),
+    img3 varchar(1000),
+    img4 varchar(1000)
+)
+
+
+--create Industrial visit table
+create table if not exist `iqac`.`iv`(
+    id int primary key auto_increment,
+    title varchar(40),
+    subtitle varchar(40),
+    description varchar(40),
+    dateOfConduct datatime,
+    industryName varchar(40),
+    topic varchar(100),
+    guide varchar(100),
+    contact number(12),
+    report varchar(1000),
+    img1 varchar(1000),
+    img2 varchar(1000),
+    img3 varchar(1000),
+    img4 varchar(1000)
+)
+
+--create Events table
+create table if not exist `iqac`.`events`(
+    id int primary key auto_increment,
+    title varchar(40),
+    subtitle varchar(40),
+    description varchar(1000),
+    dateOfConduct datetime,
+    report varchar(1000),
+    img1 varchar(1000),
+    img2 varchar(1000),
+    img3 varchar(1000),
+    img4 varchar(1000)
+);
+
 
 -- Populating the table
 insert into `iqac`.`facultyDept` values
