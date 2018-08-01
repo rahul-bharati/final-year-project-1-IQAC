@@ -68,7 +68,7 @@
                 <div class="form__group margin-top-small">
                     <button class="btn">Log in &rarr;</button>`
                 </div>
-                <span><?php $error; ?></span>
+                <span><?php echo $error; ?></span>
             </form>
         </div>
     </div>

@@ -1,5 +1,6 @@
 -- create schema for iqac
 create schema if not exists `iqac`;
+
 use iqac;
 -- create table for faculty login
 create table if not exists `iqac`.`facultyDept`(
@@ -15,17 +16,20 @@ id int primary key auto_increment,
 `Password` varchar(32)
 );
 
---create table to record report log
-create table if not exist `iqac`.`report`(id int primary key auto_increment,
-ref_id int, dateOfCreation datetime default current_timestamp, status boolean);
+-- create table to record report log
+create table if not exists `iqac`.`report`(id int primary key auto_increment,
+ref_id int,
+department varchar(100),
+event_type varchar(50),
+dateOfCreation datetime, status varchar(20));
 
---create workshop table
-create table if not exist `iqac`.`workshop`(
+-- create workshop table
+create table if not exists `iqac`.`workshop`(
     id int primary key auto_increment,
     title varchar(40),
     subtitle varchar(40),
     description varchar(1000),
-    dateOfConduct datetime,
+    dateOfConduct date,
     report varchar(1000),
     img1 varchar(1000),
     img2 varchar(1000),
@@ -33,67 +37,53 @@ create table if not exist `iqac`.`workshop`(
     img4 varchar(1000)
 );
 
---create seminar table
-create table if not exist `iqac`.`seminars`(
+-- create seminar table
+create table if not exists `iqac`.`seminars`(
     id int primary key auto_increment,
     title varchar(40),
     subtitle varchar(40),
     description varchar(40),
-    dateOfConduct datatime,
+    dateOfConduct date,
     lecturerName varchar(40),
     topic varchar(100),
-    contact number(12),
+    contact numeric(12),
     report varchar(1000),
     img1 varchar(1000),
     img2 varchar(1000),
     img3 varchar(1000),
     img4 varchar(1000)
-)
+);
 
 
---create Guest Lectures table
-create table if not exist `iqac`.`guest_lectures`(
+-- create Guest Lectures table
+create table if not exists `iqac`.`guest_lectures`(
     id int primary key auto_increment,
     title varchar(40),
     subtitle varchar(40),
     description varchar(40),
-    dateOfConduct datatime,
+    dateOfConduct date,
     lecturerName varchar(40),
     topic varchar(100),
-    contact number(12),
+    contact numeric(12),
     report varchar(1000),
     img1 varchar(1000),
     img2 varchar(1000),
     img3 varchar(1000),
     img4 varchar(1000)
-)
+);
 
 
---create Industrial visit table
-create table if not exist `iqac`.`iv`(
+-- create Industrial visit table
+create table if not exists `iqac`.`iv`(
     id int primary key auto_increment,
     title varchar(40),
     subtitle varchar(40),
     description varchar(40),
-    dateOfConduct datatime,
+    dateOfConduct date,
     industryName varchar(40),
     topic varchar(100),
     guide varchar(100),
-    contact number(12),
-    report varchar(1000),
-    img1 varchar(1000),
-    img2 varchar(1000),
-    img3 varchar(1000),
-    img4 varchar(1000)
-)
-
---create Events table
-create table if not exist `iqac`.`events`(
-    id int primary key auto_increment,
-    title varchar(40),
-    subtitle varchar(40),
-    description varchar(1000),
-    dateOfConduct datetime,
+    contact numeric(12),
     report varchar(1000),
     img1 varchar(1000),
     img2 varchar(1000),
@@ -101,6 +91,25 @@ create table if not exist `iqac`.`events`(
     img4 varchar(1000)
 );
 
+-- create Events table
+create table if not exists `iqac`.`events`(
+    id int primary key auto_increment,
+    title varchar(40),
+    subtitle varchar(40),
+    description varchar(1000),
+    dateOfConduct date,
+    report varchar(1000),
+    img1 varchar(1000),
+    img2 varchar(1000),
+    img3 varchar(1000),
+    img4 varchar(1000)
+);
+
+-- create table for events type
+create table if not exists `iqac`.`events_type`(
+id int primary key auto_increment,
+event_type varchar(50)
+);
 
 -- Populating the table
 insert into `iqac`.`facultyDept` values
@@ -157,3 +166,9 @@ insert into `iqac`.`adminDept` values
 ("","MA (Entertainment, Media & Advertising)",md5(123456)),
 ("","Sports Co-ordinator",md5(123456));
 
+insert into `iqac`.`events_type` values
+("","Workshops"),
+("","Seminars"),
+("","Guest Lectures"),
+("","Industrial Visit"),
+("","Events");

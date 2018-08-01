@@ -264,7 +264,8 @@ input[type=number]::-webkit-outer-spin-button {
       margin-left: 2rem;
       text-transform: uppercase;
       color: #7f8c8d;
-      margin-top: -.2rem; }
+      margin-top: -.2rem;
+      letter-spacing: 1px; }
       .header .logout__detail .link:link,
       .header .logout__detail .link:visited {
         color: inherit;
