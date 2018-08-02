@@ -1,0 +1,12 @@
+.filter
+{
+    display: flex;
+    flex: 0 0 100%;
+    align-content: center;
+    justify-content: space-around;
+
+    &__select
+    {
+        flex: 0 0 45%;
+    }
+}

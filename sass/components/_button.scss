@@ -2,6 +2,10 @@
 .btn:link,
 .btn:visited
 {
+    display: inline-flex;
+    text-decoration: none;
+    justify-content: center;
+    align-content: center;
     border: none;
     padding: 1rem 2rem;
     text-transform: uppercase;

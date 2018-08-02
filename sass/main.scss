@@ -6,8 +6,12 @@
 @import "base/typography";
 @import "base/utilities";
 
-@import "components/forms";
 @import "components/button";
+@import "components/filter";
+@import "components/forms";
+@import "components/image-grid";
+@import "components/link";
+@import "components/table";
 
 @import "layout/header";
 @import "layout/navigation";

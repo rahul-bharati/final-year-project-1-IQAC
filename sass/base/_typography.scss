@@ -37,3 +37,40 @@ body
     }
 
 }
+
+.tag__text
+{
+    padding: .5rem;
+    text-align: center;
+    display: block;
+    color: $color-primary;
+
+    &--right
+    {
+        padding: .5rem;
+        text-align: right;
+        display: block;
+        color: $color-primary;
+    }
+}
+
+.description__para
+{
+    text-indent: 5rem;
+    font-size: 1.4rem;
+    color: rgba(#000,.8);
+}
+
+.report__link
+{
+    font-size: 1.4rem;
+    color: $color-primary;
+    display: block;
+    padding: 1rem 0;
+}
+
+.extra-info
+{
+    font-size: 1.4rem;
+    display: block;
+}

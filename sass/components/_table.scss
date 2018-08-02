@@ -1,0 +1,23 @@
+.table
+{
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+
+    th
+    {
+        padding: .5rem 1rem;
+        color: $color-primary;
+        border: 1px solid rgba(0,0,0,.3);
+    }
+    td
+    {
+        padding: .5rem 1rem;
+        color: $color-primary;
+        border: 1px solid rgba(0,0,0,.3);
+    }
+    tr:hover
+    {
+        background-color: rgba(0,0,0,.1);
+    }
+}
