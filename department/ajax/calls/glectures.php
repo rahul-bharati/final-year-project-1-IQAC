@@ -70,6 +70,7 @@
                 if($con->query($sql))
                 {
                     echo "files uploaded successfully";
+                    header("location: ../../../view/view.php?id=$lastid&type=3");
                 }
             }
         }

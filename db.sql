@@ -140,31 +140,7 @@ insert into `iqac`.`facultyDept` values
 ("","Sports Co-ordinator",md5(123456));
 
 insert into `iqac`.`adminDept` values
-("","History",md5(123456)),
-("","Business Economics",md5(123456)),
-("","Economics",md5(123456)),
-("","Psychology",md5(123456)),
-("","English",md5(123456)),
-("","Political Science",md5(123456)),
-("","Hindi",md5(123456)),
-("","Accountancy",md5(123456)),
-("","Environmental Studies",md5(123456)),
-("","Commerce",md5(123456)),
-("","Chemistry",md5(123456)),
-("","Physics",md5(123456)),
-("","Botany",md5(123456)),
-("","Zoology",md5(123456)),
-("","Mathematics and Statistics",md5(123456)),
-("","Librarian",md5(123456)),
-("","Computer Science",md5(123456)),
-("","Information technology",md5(123456)),
-("","Bio-Technology",md5(123456)),
-("","B.M.M",md5(123456)),
-("","B.M.S & B.A.F",md5(123456)),
-("","M.A. English Literature",md5(123456)),
-("","M.A. Psychology",md5(123456)),
-("","MA (Entertainment, Media & Advertising)",md5(123456)),
-("","Sports Co-ordinator",md5(123456));
+("","Admin",md5(123456));
 
 insert into `iqac`.`events_type` values
 ("","Workshops"),

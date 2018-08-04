@@ -26,13 +26,13 @@
         $target_report = $target_file . basename($_FILES["report"]["name"]);
 
         //gets information about images
-        $file_name1 = basename($_FILES["image1"]["name"]);
-        $file_name2 = basename($_FILES["image2"]["name"]);
-        $file_name3 = basename($_FILES["image3"]["name"]);
-        $file_name4 = basename($_FILES["image4"]["name"]);
+        // $file_name1 = basename($_FILES["image1"]["name"]);
+        // $file_name2 = basename($_FILES["image2"]["name"]);
+        // $file_name3 = basename($_FILES["image3"]["name"]);
+        // $file_name4 = basename($_FILES["image4"]["name"]);
 
         //gets information about report file
-        $file_name5 = basename($_FILES["report"]["name"]);
+        // $file_name5 = basename($_FILES["report"]["name"]);
 
 
         //writes the file to the server
@@ -70,6 +70,7 @@
                 if($con->query($sql))
                 {
                     echo "files uploaded successfully";
+                    header("location: ../../../view/view.php?id=$lastid&type=2");
                 }
             }
         }

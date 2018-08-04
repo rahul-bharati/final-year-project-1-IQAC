@@ -3,6 +3,11 @@
     session_start();
 
 
+    if(isset($_SESSION["admin"]))
+    {
+        header("location: index.php");
+    }
+
     $user = "";
     $error="";
     if($_SERVER["REQUEST_METHOD"] == "POST")
@@ -15,6 +20,10 @@
         $result = $con->query($sql) or die($con->error);
         $row = $result->fetch_assoc();
 
+        if(isset($_SESSION["dept"]))
+        {
+            unset($_SESSION["dept"]);
+        }
         if($result->num_rows == 1)
         {
             $_SESSION["admin"] = $user;
@@ -52,18 +61,7 @@
             <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="post">
                 <div class="form__group">
                     <select name="Department" id="dep" class="form__select">
-                        <option>--Select--</option>
-                        <?php
-                            $sql = "select Department_name from iqac.facultyDept";
-                            $result = $con->query($sql);
-                            if($result->num_rows > 0)
-                            {
-                                while($row = $result->fetch_assoc())
-                                {
-                                    echo "<option>".$row["Department_name"]."</option>";
-                                }
-                            }
-                        ?>
+                        <option value="admin">Admin</option>
                     </select>
                 </div>
                 <div class="form__group">

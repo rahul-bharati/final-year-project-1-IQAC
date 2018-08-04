@@ -2,15 +2,20 @@
     include "../config/config.php";
     session_start();
 
-    // if(isset($_SESSION["dept"]))
-    // {
-    //     header("location: index.php");
-    // }
+    if(isset($_SESSION["dept"]))
+    {
+        header("location: index.php");
+    }
+    
 
     $user = "";
     $error="";
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
+        if(isset($_SESSION["admin"]))
+        {
+            unset($_SESSION["admin"]);
+        }
         $user = $_POST["Department"];
         $password = $_POST["password"];
         $password = md5($password);

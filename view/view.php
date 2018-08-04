@@ -117,7 +117,17 @@
                     <i class="icon fa fa-user"></i>
                 </span>
                 <span class="logout__detail">
-                    <span class="user-name"><?php echo $_SESSION["dept"]; ?></span>
+                    <span class="user-name">
+                    <?php 
+                        if(isset($_SESSION["dept"]))
+                        {
+                            echo $_SESSION["dept"];
+                        }
+                        if(isset($_SESSION["admin"]))
+                        {
+                            echo $_SESSION["admin"];
+                        } 
+                    ?></span>
                     <span class="logout__link"><a href="logout.php" class="link">logout</a></span>
                 </span>
             </div>
@@ -183,13 +193,9 @@
                     <div class="img-grid__container"><img src="<?php echo "../".$image4; ?>" class="img-grid__image"></div>
                 </div>
                 <?php
-                    if(isset($_SESSION["dept"]))
-                    {
-                        echo "<div class=\"button-div align-right margin-right-small\"><a class=\"btn margin-top-small\" href=\"pdfPrint.php?id=".$id."&type=".$type."\" target=\"_blank\" >Print &rarr;</a></div>";
-                    }
+                    echo "<div class=\"button-div align-right margin-right-small\"><a class=\"btn margin-top-small\" href=\"pdfPrint.php?id=".$id."&type=".$type."\" target=\"_blank\">Print &rarr;</a></div>";
                     if(isset($_SESSION["admin"]))
                     {
-                        echo "<div class=\"button-div align-right margin-right-small\"><a class=\"btn margin-top-small\" href=\"pdfPrint.php?id=".$id."&type=".$type."\" target=\"_blank\">Print &rarr;</a></div>";
                         echo "<div class=\"button-div align-right margin-right-small\"><a class=\"btn margin-top-small\">Approve &rarr;</a></div>";
                     }
                 ?>
