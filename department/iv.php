@@ -2,7 +2,7 @@
 
             <div class="form-container">
                 <h2 class="heading__secondary">Industrial Visit</h2>
-                <form action="./ajax/calls/iv.php" class="form" method="post" enctype="multipart/form-data">
+                <form action="./ajax/calls/iv.php" class="form" method="post" enctype="multipart/form-data" id="ivForm">
                     <div class="form__group">
                         <label for="title" class="form__label--up">
                             Title

@@ -10,6 +10,7 @@
 html
 {
     box-sizing: border-box;
+    min-height: 100%;
 }
 
 body
@@ -17,8 +18,9 @@ body
     background-image: linear-gradient(to right bottom, $color-gradient-1, $color-gradient-2, $color-gradient-3);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 100%;
     padding: 2rem;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }

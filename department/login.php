@@ -24,6 +24,7 @@
         $result = $con->query($sql) or die($con->error);
         if($result->num_rows == 1)
         {
+            unset($_SESSION["admin"]);
             $_SESSION["dept"] = $user;
 
             header("Location: index.php");

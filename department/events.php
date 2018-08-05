@@ -2,7 +2,7 @@
 
             <div class="form-container">
                 <h2 class="heading__secondary">Events</h2>
-                <form action="./ajax/calls/events.php" class="form" method="post" enctype="multipart/form-data">
+                <form action="./ajax/calls/events.php" class="form" method="post" enctype="multipart/form-data" id="eventForm">
                     <div class="form__group">
                         <label for="title" class="form__label--up">
                             Title

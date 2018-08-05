@@ -2,7 +2,7 @@
 
             <div class="form-container">
                 <h2 class="heading__secondary">Guest Lecture</h2>
-                <form action="./ajax/calls/glectures.php" method="post" class="form" enctype="multipart/form-data">
+                <form action="./ajax/calls/glectures.php" method="post" class="form" enctype="multipart/form-data" id="glecturesForm">
                     <div class="form__group">
                         <label for="title" class="form__label--up">
                             Title

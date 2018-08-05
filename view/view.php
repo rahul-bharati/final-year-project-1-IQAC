@@ -104,8 +104,21 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/font.min.css">
     <title>IQAC</title>
+    <script>
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
 </head>
 <body>
+    <div class="loading">
+        <div class="loading__container">
+            <img src="../img/loading.svg" class="loading__image">
+            <span class="loadin__span">Uploading. Please Wait.........</span>
+        </div>
+    </div>
     <div class="container">
         <header class="header">
             <h1 class="heading__primary">
@@ -151,7 +164,9 @@
                             }
                             if(isset($_SESSION["admin"]))
                             {
-                                
+                                echo "<li class=\"nav-item\"><a class=\"nav-link\" href=\"../admin/index.php\">View Applications</a></li>
+                                <li class=\"nav-item\"><a class=\"nav-link\" href=\"../admin/changePass.php\">Change dept Password</a></li>
+                                <li class=\"nav-item\"><a class=\"nav-link\" href=\"../admin/approvedApp.php\">View accepted Applications</a></li>";      
                             }
                         ?>
                         <!--
@@ -196,7 +211,17 @@
                     echo "<div class=\"button-div align-right margin-right-small\"><a class=\"btn margin-top-small\" href=\"pdfPrint.php?id=".$id."&type=".$type."\" target=\"_blank\">Print &rarr;</a></div>";
                     if(isset($_SESSION["admin"]))
                     {
-                        echo "<div class=\"button-div align-right margin-right-small\"><a class=\"btn margin-top-small\">Approve &rarr;</a></div>";
+                        $sql = "select id,iqac.report.status as status from iqac.report where ref_id='$id' and event_type='$type'";
+                        $result = $con->query($sql);
+                        $row = $result->fetch_assoc();
+                        if($row["status"] == "Approved")
+                        {
+                            echo "<div class=\"button-div approved\"><a class=\"margin-top-large\">Approved </a></div>";    
+                        }
+                        else
+                        {
+                            echo "<div class=\"button-div align-right margin-right-small\"><a class=\"btn margin-top-small\" onclick=\"viewApprove(this,".$row["id"].")\">Approve &rarr;</a></div>";
+                        }
                     }
                 ?>
             </div>

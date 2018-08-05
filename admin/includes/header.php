@@ -8,8 +8,21 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/font.min.css">
     <title>IQAC</title>
+    <script>
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
 </head>
 <body>
+    <div class="loading">
+        <div class="loading__container">
+            <img src="../img/loading.svg" class="loading__image">
+            <span class="loadin__span">Uploading. Please Wait.........</span>
+        </div>
+    </div>
     <div class="container">
         <header class="header">
             <h1 class="heading__primary">
