@@ -141,7 +141,16 @@
                             echo $_SESSION["admin"];
                         } 
                     ?></span>
-                    <span class="logout__link"><a href="logout.php" class="link">logout</a></span>
+                    <span class="logout__link"><a href="<?php 
+                            if(isset($_SESSION["dept"]))
+                            {
+                                echo "./../department/logout.php";
+                            }
+                            if(isset($_SESSION["admin"]))
+                            {
+                                echo "./../admin/logout.php";
+                            }
+                        ?>" class="link">logout</a></span>
                 </span>
             </div>
         </header>
